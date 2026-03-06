@@ -1,0 +1,66 @@
+/* Reset default list styles */
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navbar container */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1e293b;
+  padding: 15px 40px;
+  position: sticky;
+  top: 0;
+  
+}
+
+/* Logo */
+.logo {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Nav links layout */
+.nav-links {
+  display: flex;
+  gap: 25px;
+}
+
+/* Links */
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+/* Hover effect */
+.nav-links a:hover {
+  color: #38bdf8;
+}
+
+/* Social media footer styles */
+.footer-social {
+  display: flex;
+  gap: 15px;
+  .footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.footer-social a {
+  font-size: 28px;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.footer-social a:hover {
+  transform: scale(1.2);
+}

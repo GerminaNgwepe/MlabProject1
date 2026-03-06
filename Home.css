@@ -1,0 +1,89 @@
+/* Reset default list styles */
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navbar container */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1e293b;
+  padding: 15px 40px;
+  position: sticky;
+  top: 0;
+  
+}
+
+/* Logo */
+.logo {
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* Nav links layout */
+.nav-links {
+  display: flex;
+  gap: 25px;
+}
+
+/* Links */
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+/* Hover effect */
+.nav-links a:hover {
+  color: #38bdf8;
+}
+
+.form-label
+{
+    padding-left: 15px;
+    margin-bottom: 5px;         
+    color:white ;
+    align-content: center;
+    font-size: 30px;
+    text-decoration: double;
+    /* Global styles */
+
+}
+
+#username, #password {
+  width: 60%;
+  height: 70%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  flex-direction: column;
+  align-items: center;   /* centers horizontally */
+  justify-content: center;
+}
+
+.form-buttons {
+ color:white;
+background-color:#441717;
+    
+    
+    border-radius: 4px;
+    cursor: pointer;
+    align-items: center;
+  justify-content: center;
+
+}
+
+.form-buttons:hover {
+  background-color: #c7b4b4;
+}
+
+#login-btn {
+  background-color: #441717;
+  
+}
