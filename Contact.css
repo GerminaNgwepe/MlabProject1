@@ -43,24 +43,36 @@
   color: #38bdf8;
 }
 
-/* Social media footer styles */
-.footer-social {
-  display: flex;
-  gap: 15px;
-  .footer {
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  margin-top: 20px;
+
+.footer{
+  background-color: #1e293b;
+  color: white;
+  text-align: center;
+  padding: 10px 5px;
+  
 }
 
-.footer-social a {
-  font-size: 28px;
-  text-decoration: none;
-  transition: transform 0.3s ease;
+.footer p{
+  color: #ccc;
 }
 
-.footer-social a:hover {
-  transform: scale(1.2);
+.social-icons{
+  margin: 20px 0;
 }
+
+.social-icons a{
+  color: white;
+  font-size: 22px;
+  margin: 0 15px;
+  transition: 0.3s;
+}
+
+.social-icons a:hover{
+  color: #00bcd4;
+}
+
+.copyright{
+  font-size: 12px;
+  color:black;
+}
+
