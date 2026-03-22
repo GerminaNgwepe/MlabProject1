@@ -3,11 +3,12 @@
     <link rel="stylesheet" href="Contact.css">
 
     
-     <nav class="navbar">
+     <nav class="navbar"> 
         <h1 class="logo">Zoner Platform</h1>
 
      <ul class="nav-links">
         <li><a href="Home.html">Home</a></li>
+        <li><a href="Booking.html">Booking</a></li>
         <li><a href="About.html">About</a></li>
         <li><a href="Contact.html">Contact Us</a></li>
            
@@ -91,5 +92,14 @@
   </div>
 
 </footer>
+
+<script>
+    document.querySelector('form').addEventListener('submit', function(event) {
+        event.preventDefault(); // Prevent form submission
+        alert('Message sent successfully!');
+        this.reset(); // Clear the form
+    });
+</script>
+
 </body>
 </html>

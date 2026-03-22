@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Booking.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <title>Booking</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #d5e2e9;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: rgb(241, 218, 218);
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #555;
+            font-weight: bold;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+     <nav class="navbar">
+        <h1 class="logo">Zoner Platform</h1>
+
+     <ul class="nav-links">
+        <li><a href="Home.html">Home</a></li>
+        <li><a href="Booking.html">Booking</a></li>
+        <li><a href="About.html">About</a></li>
+        <li><a href="Contact.html">Contact Us</a></li>
+           
+     </ul>
+     </nav>
+    <div class="container">
+        <h1>Booking Form</h1>
+        <form>
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="checkin-date">Check-in Date</label>
+                <input type="date" id="checkin-date" name="checkin-date" required>
+            </div>
+            <div class="form-group">
+                <label for="checkout-date">Check-out Date</label>
+                <input type="date" id="checkout-date" name="checkout-date" required>
+            </div>
+            <div class="form-group">
+                <label for="time">Time</label>
+                <input type="time" id="time" name="time" required>
+            </div>
+            <button type="submit">Book Now</button>
+        </form>
+    </div>
+
+    <script>
+        // Get today's date in YYYY-MM-DD format
+        const today = new Date().toISOString().split('T')[0];
+
+        // Set minimum date for check-in to today
+        document.getElementById('checkin-date').setAttribute('min', today);
+
+        // Function to update checkout min date based on check-in
+        function updateCheckoutMin() {
+            const checkinDate = document.getElementById('checkin-date').value;
+            if (checkinDate) {
+                const checkin = new Date(checkinDate);
+                const nextDay = new Date(checkin);
+                nextDay.setDate(checkin.getDate() + 1);
+                const nextDayStr = nextDay.toISOString().split('T')[0];
+                document.getElementById('checkout-date').setAttribute('min', nextDayStr);
+            }
+        }
+
+        // Add event listener to check-in date to update checkout min
+        document.getElementById('checkin-date').addEventListener('change', updateCheckoutMin);
+
+        // Form validation on submit
+        document.querySelector('form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+            
+            const checkinDate = new Date(document.getElementById('checkin-date').value);
+            const checkoutDate = new Date(document.getElementById('checkout-date').value);
+            const todayDate = new Date(today);
+
+            // Check if check-in is not in the past
+            if (checkinDate < todayDate) {
+                alert('Check-in date cannot be in the past.');
+                return;
+            }
+
+            // Check if check-out is at least one day after check-in
+            const minCheckout = new Date(checkinDate);
+            minCheckout.setDate(checkinDate.getDate() + 1);
+            if (checkoutDate < minCheckout) {
+                alert('Check-out date must be at least one day after check-in date.');
+                return;
+            }
+
+            // If validation passes, show success message and reset form
+            alert('Booking submitted successfully!');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
+    
